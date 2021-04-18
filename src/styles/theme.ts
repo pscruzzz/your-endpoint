@@ -4,6 +4,7 @@ import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 const breakpoints = createBreakpoints({
   xs: '320px',
+  '2xs': '366px',
   sm: '412px',
   '2sm': '501px',
   '3sm': '590px',
@@ -42,7 +43,7 @@ const theme = extendTheme({
         color: 'gray.800'
       },
       html: {
-        fontSize: ['35%', '40%', '45%', '50%', '55%', '62.5%', '62.5%']
+        fontSize: ['35%', '35%', '40%', '45%', '50%', '55%', '62.5%', '62.5%']
       }
     }
   }

@@ -38,7 +38,8 @@ const Home: React.FC = () => {
             color="gray.500"
             fontSize={[
               '1.8rem',
-              '1.8rem',
+              '2rem',
+              '2rem',
               '2rem',
               '2.2rem',
               '2.2rem',
