@@ -31,17 +31,17 @@ const Home: React.FC = () => {
         </Box>
         <Box
           position="absolute"
-          left={['15%', '15%', '15%', '15%', '15%', '10rem']}
+          left={['15%', '15%', '15%', '10rem']}
           bottom="0rem"
         >
           <Text
             color="gray.500"
             fontSize={[
-              '1.5rem',
-              '1.5rem',
+              '1.8rem',
               '1.8rem',
               '2rem',
-              '2rem',
+              '2.2rem',
+              '2.2rem',
               '2.2rem',
               '2.5rem'
             ]}
