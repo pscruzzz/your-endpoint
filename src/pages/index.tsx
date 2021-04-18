@@ -34,19 +34,7 @@ const Home: React.FC = () => {
           left={['15%', '15%', '15%', '10rem']}
           bottom="0rem"
         >
-          <Text
-            color="gray.500"
-            fontSize={[
-              '1.8rem',
-              '2rem',
-              '2rem',
-              '2rem',
-              '2.2rem',
-              '2.2rem',
-              '2.2rem',
-              '2.5rem'
-            ]}
-          >
+          <Text color="gray.500" fontSize={['2.2rem']}>
             life, just like requests, goes by every ms.
           </Text>
         </Box>
