@@ -29,7 +29,7 @@ interface IResponsiveProperty {
 const responsive: IResponsive = {
   signWrapper: {
     direction: ['column', 'row', 'row', 'column', 'row'],
-    align: ['center', 'flex-end', 'flex-end', 'flex-end', 'flex-end']
+    align: ['center', 'flex-end', 'flex-start', 'flex-end', 'flex-end']
   },
   signBox: {
     direction: ['column', 'column', 'column', 'row', 'row'],
@@ -73,7 +73,7 @@ const responsive: IResponsive = {
     display: ['none', 'none', 'none', 'flex', 'flex']
   },
   SVGBoyContainer: {
-    w: ['100%', '48%', '48%', '100%', '38%']
+    w: ['80%', '48%', '48%', '100%', '38%']
   }
 }
 
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
         >
           <Flex
             direction={responsive.signWrapper.direction}
-            align={responsive.signWrapper.direction}
+            align={responsive.signWrapper.align}
             justify="space-between"
             w="100%"
             className="SignWrapper"
