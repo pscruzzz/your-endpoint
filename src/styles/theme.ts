@@ -78,7 +78,7 @@ const theme: Theme = extendTheme({
         color: 'gray.800'
       },
       html: {
-        fontSize: ['40%', '45%', '50%', '60%', '62.5%']
+        fontSize: ['40%', '45%', '55%', '65%', '65%']
       }
     }
   }

@@ -199,7 +199,7 @@ const Home: React.FC = () => {
                   justify={responsive.signUpWrapper.justify}
                   align="center"
                   minH="85%"
-                  height="100%"
+                  h={{ sm: '100%', xl: 'auto' }}
                 >
                   <Flex direction="column" align="center" justify="center">
                     <Text
@@ -239,6 +239,7 @@ const Home: React.FC = () => {
               className="SVGBoyContainer"
               h={['fit-content', 'fit-content', 'fit-content', 'auto']}
               justify="flex-end"
+              align="flex-end"
               w={responsive.SVGBoyContainer.w}
             >
               <Image
