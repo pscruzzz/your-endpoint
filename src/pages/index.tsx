@@ -28,7 +28,7 @@ interface IResponsiveProperty {
 
 const responsive: IResponsive = {
   signWrapper: {
-    direction: ['column', 'column', 'row  ', 'column', 'row'],
+    direction: ['column', 'row', 'row', 'column', 'row'],
     align: ['center', 'flex-end', 'flex-end', 'flex-end', 'flex-end']
   },
   signBox: {
@@ -50,7 +50,7 @@ const responsive: IResponsive = {
     w: ['100%', '100%', '100%', '40%', '35%'],
     borderRadius: [
       '0rem 0rem 1.5rem 1.5rem',
-      '0rem 1.5rem 1.5rem 0rem',
+      '0rem 0rem 1.5rem 1.5rem',
       '0rem 0rem 1.5rem 1.5rem',
       '0rem 1.5rem 1.5rem 0rem',
       '0rem 1.5rem 1.5rem 0rem'
@@ -73,7 +73,7 @@ const responsive: IResponsive = {
     display: ['none', 'none', 'none', 'flex', 'flex']
   },
   SVGBoyContainer: {
-    w: ['48%', '48%', '48%', '58%', '38%']
+    w: ['100%', '48%', '48%', '100%', '38%']
   }
 }
 
@@ -245,7 +245,7 @@ const Home: React.FC = () => {
               <Image
                 src="/assets/HomeBoy.svg"
                 alt="Endpoint Boy"
-                maxWidth="480px"
+                maxWidth={['700px', '480px', '480px', '700px', '480px']}
               />
             </Flex>
           </Flex>
