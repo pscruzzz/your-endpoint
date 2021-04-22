@@ -1,22 +1,6 @@
 import { extendTheme, Theme } from '@chakra-ui/react'
 
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
-const breakpoints = createBreakpoints({
-  xs: '320px',
-  '2xs': '366px',
-  sm: '412px',
-  '2sm': '501px',
-  '3sm': '590px',
-  '4sm': '679px',
-  md: '768px',
-  lg: '1024px',
-  xl: '1440px',
-  '2xl': '1440px'
-})
-
 const theme: Theme = extendTheme({
-  breakpoints,
   colors: {
     gray: {
       200: '#F4FDFF',
@@ -45,7 +29,7 @@ const theme: Theme = extendTheme({
         transition: '0.2s'
       },
       variants: {
-        ghost: {
+        solid: {
           color: 'gray.200',
           _hover: {
             bg: 'gray.900'
@@ -53,7 +37,6 @@ const theme: Theme = extendTheme({
           _focus: {
             boxShadow: 'none'
           },
-
           _active: {
             bg: 'gray.300'
           },
@@ -61,22 +44,33 @@ const theme: Theme = extendTheme({
         }
       },
       sizes: {
-        lg: {
-          fontSize: '2.5rem',
-          px: '3rem',
-          py: '2rem'
-        },
         md: {
-          fontSize: '1.5rem',
-          p: '3rem'
-        },
-        sm: {
-          fontSize: '1rem',
-          p: '3rem'
+          fontSize: '2.2rem',
+          py: '2rem',
+          px: '2.5rem'
         }
+      }
+    },
+    Input: {
+      sizes: {
+        lg: {
+          field: {
+            fontSize: '2rem',
+            px: '3rem',
+            h: '5rem',
+            borderRadius: '0.8rem'
+          }
+        }
+      }
+    },
+    FormLabel: {
+      baseStyle: {
+        fontSize: '1.8rem',
+        fontWeight: '400'
       }
     }
   },
+
   styles: {
     global: {
       body: {
@@ -84,19 +78,7 @@ const theme: Theme = extendTheme({
         color: 'gray.800'
       },
       html: {
-        fontSize: [
-          '35%',
-          '32.5%',
-          '35%',
-          '40%',
-          '50%',
-          '60%',
-          '62.5%',
-          '62.5%',
-          '62.5%',
-          '62.5%',
-          '62.5%'
-        ]
+        fontSize: ['40%', '45%', '50%', '60%', '62.5%']
       }
     }
   }

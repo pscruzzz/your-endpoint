@@ -12,9 +12,70 @@ import {
   FormHelperText,
   Heading,
   Button,
-  VStack
+  VStack,
+  ResponsiveValue,
+  Stack
 } from '@chakra-ui/react'
 import Header from '../components/Header'
+
+interface IResponsive {
+  [key: string]: IResponsiveProperty
+}
+
+interface IResponsiveProperty {
+  [key: string]: ResponsiveValue<any>
+}
+
+const responsive: IResponsive = {
+  signWrapper: {
+    direction: ['column', 'column', 'row  ', 'column', 'row'],
+    align: ['center', 'flex-end', 'flex-end', 'flex-end', 'flex-end']
+  },
+  signBox: {
+    direction: ['column', 'column', 'column', 'row', 'row'],
+    w: ['100%', '48%', '48%', '100%', '58%']
+  },
+  signIn: {
+    w: ['100%', '100%', '100%', '60%', '65%'],
+    borderRadius: [
+      '1.5rem 1.5rem 0rem 0rem',
+      '1.5rem 1.5rem 0rem 0rem',
+      '1.5rem 1.5rem 0rem 0rem',
+      '1.5rem 0rem 0rem 1.5rem',
+      '1.5rem 0rem 0rem 1.5rem'
+    ],
+    h: ['100%', '70%', '70%', '100%', '100%']
+  },
+  signUp: {
+    w: ['100%', '100%', '100%', '40%', '35%'],
+    borderRadius: [
+      '0rem 0rem 1.5rem 1.5rem',
+      '0rem 1.5rem 1.5rem 0rem',
+      '0rem 0rem 1.5rem 1.5rem',
+      '0rem 1.5rem 1.5rem 0rem',
+      '0rem 1.5rem 1.5rem 0rem'
+    ]
+  },
+  signUpWrapper: {
+    direction: ['row', 'row', 'row', 'column'],
+    justify: [
+      'space-between',
+      'space-around',
+      'space-between',
+      'space-between',
+      'space-between'
+    ]
+  },
+  signUpWrapperText: {
+    fontSize: ['3rem', '2.5rem', '2.2rem', '3rem']
+  },
+  middleTextSignUp: {
+    display: ['none', 'none', 'none', 'flex', 'flex']
+  },
+  SVGBoyContainer: {
+    w: ['48%', '48%', '48%', '58%', '38%']
+  }
+}
 
 const Home: React.FC = () => {
   return (
@@ -29,7 +90,7 @@ const Home: React.FC = () => {
         justify="space-between"
         w="95%"
         maxWidth="1440px"
-        h="100vh"
+        h="90vh"
       >
         <Header />
         <Flex
@@ -40,29 +101,43 @@ const Home: React.FC = () => {
           className="SignContainer"
         >
           <Flex
-            direction="row"
-            align="flex-end"
+            direction={responsive.signWrapper.direction}
+            align={responsive.signWrapper.direction}
             justify="space-between"
             w="100%"
             className="SignWrapper"
+            h="100%"
           >
             <Flex
-              direction={{ xs: 'column', lg: 'row' }}
-              w="60%"
-              h="60vh"
+              direction={responsive.signBox.direction}
+              w={responsive.signBox.w}
+              justify="center"
               className="SignBox"
+              h={['fit-content', 'fit-content', 'fit-content', 'auto']}
             >
               <Flex
+                py="2rem"
                 as="form"
                 className="SignIn"
-                w={{ xs: '100%', lg: '65%' }}
+                w={responsive.signIn.w}
                 bg="gray.300"
-                borderRadius="1.5rem 0rem 0rem 1.5rem"
+                borderRadius={responsive.signIn.borderRadius}
                 align="center"
                 justify="center"
               >
-                <VStack w="70%" h="100%">
-                  <VStack w="100%" h="66.66%" align="center" justify="center">
+                <VStack
+                  w="85%"
+                  spacing="3rem"
+                  minH="85%"
+                  justify="space-between"
+                >
+                  <VStack
+                    spacing="3rem"
+                    w="100%"
+                    h="66.66%"
+                    align="center"
+                    justify="center"
+                  >
                     <FormControl
                       id="email"
                       display="flex"
@@ -71,7 +146,12 @@ const Home: React.FC = () => {
                       w="100%"
                     >
                       <FormLabel w="fit-content">Your email</FormLabel>
-                      <Input type="email" />
+                      <Input
+                        type="email"
+                        focusBorderColor="gray.800"
+                        variant="outline"
+                        size="lg"
+                      />
                     </FormControl>
                     <FormControl
                       id="password"
@@ -81,7 +161,12 @@ const Home: React.FC = () => {
                       w="100%"
                     >
                       <FormLabel w="fit-content">Your password</FormLabel>
-                      <Input type="password" />
+                      <Input
+                        type="password"
+                        focusBorderColor="gray.800"
+                        variant="outline"
+                        size="lg"
+                      />
                     </FormControl>
                   </VStack>
                   <Flex
@@ -91,7 +176,7 @@ const Home: React.FC = () => {
                     w="100%"
                     h="33.33%"
                   >
-                    <Button variant="ghost" size="lg" type="submit" w="70%">
+                    <Button variant="solid" size="md" maxWidth="90%">
                       Your Click
                     </Button>
                     <Heading>OR</Heading>
@@ -99,48 +184,63 @@ const Home: React.FC = () => {
                 </VStack>
               </Flex>
               <Flex
-                direction="column"
                 className="SignUp"
-                w={{ xs: '100%', lg: '35%' }}
-                bg="gray.200"
-                justify="space-around"
+                justify="center"
                 align="center"
-                borderRadius="0rem 1.5rem 1.5rem 0rem"
+                w={responsive.signUp.w}
+                bg="gray.200"
+                py="2rem"
+                borderRadius={responsive.signUp.borderRadius}
               >
-                <Flex
-                  direction="column"
-                  h="33%"
+                <Stack
+                  className="SignUpWrapper"
+                  w="85%"
+                  direction={responsive.signUpWrapper.direction}
+                  justify={responsive.signUpWrapper.justify}
                   align="center"
-                  justify="center"
+                  minH="85%"
+                  height="100%"
                 >
-                  <Text textAlign="center" fontSize="3rem">
-                    your step to
-                  </Text>
-                  <Heading textAlign="center" fontSize="3rem">
-                    signUp
-                  </Heading>
-                </Flex>
-                <Flex
-                  direction="column"
-                  h="33%"
-                  align="center"
-                  justify="center"
-                >
-                  <Text fontSize="2rem" textAlign="center">
-                    yes, silly.
-                  </Text>
-                  <Text fontSize="2rem" textAlign="center">
-                    it’s free.
-                  </Text>
-                </Flex>
-                <Flex h="33%" align="center" justify="center">
-                  <Button variant="ghost" size="lg">
+                  <Flex direction="column" align="center" justify="center">
+                    <Text
+                      textAlign="center"
+                      fontSize={responsive.signUpWrapperText.fontSize}
+                    >
+                      your step to
+                    </Text>
+                    <Heading
+                      textAlign="center"
+                      fontSize={responsive.signUpWrapperText.fontSize}
+                    >
+                      signUp
+                    </Heading>
+                  </Flex>
+                  <Flex
+                    direction="column"
+                    className="middleTextSignUp"
+                    display={responsive.middleTextSignUp.display}
+                    align="center"
+                    justify="center"
+                  >
+                    <Text fontSize="2rem" textAlign="center">
+                      yes, silly.
+                    </Text>
+                    <Text fontSize="2rem" textAlign="center">
+                      it’s free.
+                    </Text>
+                  </Flex>
+                  <Button variant="solid" size="md" maxWidth="100%">
                     Your Chance
                   </Button>
-                </Flex>
+                </Stack>
               </Flex>
             </Flex>
-            <Flex justify="flex-end" w="38%">
+            <Flex
+              className="SVGBoyContainer"
+              h={['fit-content', 'fit-content', 'fit-content', 'auto']}
+              justify="flex-end"
+              w={responsive.SVGBoyContainer.w}
+            >
               <Image
                 src="/assets/HomeBoy.svg"
                 alt="Endpoint Boy"

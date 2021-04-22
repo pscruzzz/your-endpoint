@@ -16,10 +16,10 @@ const Header: React.FC = () => {
       </Box>
       <Box
         position="absolute"
-        left={['15%', '15%', '15%', '10rem']}
+        left={['15%', '15%', '10rem', '10rem']}
         bottom="0rem"
       >
-        <Text color="gray.500" fontSize={['2.2rem']}>
+        <Text color="gray.500" fontSize={['1.8rem', '2.5rem', '2.5rem']}>
           life, just like requests, goes by every ms.
         </Text>
       </Box>
