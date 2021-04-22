@@ -106,7 +106,7 @@ const Home: React.FC = () => {
             justify="space-between"
             w="100%"
             className="SignWrapper"
-            h="100%"
+            h={['100%', '100%', '100%', '100%', 'auto']}
           >
             <Flex
               direction={responsive.signBox.direction}
