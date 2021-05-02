@@ -106,14 +106,14 @@ const Home: React.FC = () => {
             justify="space-between"
             w="100%"
             className="SignWrapper"
-            h={['100%', '100%', '100%', '100%', 'auto']}
+            h={['100%', '100%', '100%', '100%', '70%']}
           >
             <Flex
               direction={responsive.signBox.direction}
               w={responsive.signBox.w}
               justify="center"
               className="SignBox"
-              h={['fit-content', 'fit-content', 'fit-content', 'auto']}
+              h={['fit-content', 'fit-content', 'fit-content', '100%']}
             >
               <Flex
                 py="2rem"
@@ -241,6 +241,7 @@ const Home: React.FC = () => {
               justify="flex-end"
               align="flex-end"
               w={responsive.SVGBoyContainer.w}
+              display={['none', 'flex', 'flex', 'flex']}
             >
               <Image
                 src="/assets/HomeBoy.svg"
